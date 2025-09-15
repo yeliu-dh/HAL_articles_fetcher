@@ -32,9 +32,9 @@ from HAL_search_api import fetch_hal_articles
 ##HAL
 #code/streamlit.py
 # facets/..
-domain_file = Path(__file__).parent / "../facets/domain_map.json"
-lang_file = Path(__file__).parent / "../facets/lang_map.json"
-doctype_file= Path(__file__).parent / "../facets/doctype_map.json"
+domain_file = Path(__file__).parent / "facets/domain_map.json"
+lang_file = Path(__file__).parent / "facets/lang_map.json"
+doctype_file= Path(__file__).parent / "facets/doctype_map.json"
 
 @st.cache_data
 def load_json(path):
@@ -62,7 +62,7 @@ with left_col:
 
     text = st_tags(
     label="📑Text",
-    text="Tapez le text et appuyez sur Entrée",
+    text="Tapez et 'Entrée' (chercher un texte dans tous les champs...)",
     value=[],
     suggestions=[],
     maxtags=10
@@ -85,7 +85,7 @@ with left_col:
 
     keywords = st_tags(
         label="💡 Mots-clés",
-        text="Tapez un mot-clé et appuyez sur Entrée",
+        text="Tapez et 'Entrée'",
         value=[],
         suggestions=[],
         maxtags=10
@@ -126,7 +126,7 @@ with left_col:
 
     labs = st_tags(
         label="🔬 Laboratoire",
-        text="Tapez un laboratoire et appuyez sur Entrée",
+        text="Tapez et 'Entrée'",
         value=["Institut de Recherche en Gestion"],
         maxtags=10
     )
@@ -183,10 +183,12 @@ with right_col:
                         codes = codes_str.split(";")
                         mapped = []
                         for code in codes:
-                            code_clean = re.sub(r"^\d+\.", "", code)
+                            code_clean = re.sub(r"^\d+\.", "", code.strip())
                             mapped.append(DOMAIN_MAP.get(code_clean, code_clean))
                         return "; ".join(mapped)
                     df["domain_s"] = df["domain_s"].apply(map_domains)
+
+
 
                 if df.empty:
                     st.warning("0 résultat!")

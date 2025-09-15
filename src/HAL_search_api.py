@@ -90,10 +90,10 @@ def fetch_hal_articles(start_year=None, start_month=None, end_year=None, end_mon
     else:
         q="*:*"
 
-    # CHECK: 
+    # # CHECK: 
     # #输入筛选条件
     # params = {
-    #     "q": "*:*",
+    #     "q": q,
     #     "fq": fq,
     #     "fl": ",".join(fields),
     #     "rows": rows,
