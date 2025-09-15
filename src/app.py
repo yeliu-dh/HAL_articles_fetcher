@@ -181,7 +181,7 @@ with right_col:
                     st.download_button(
                         label="💾 Télécharger",
                         data=csv_data,
-                        file_name=f"hal_articles-{start_month}-{start_year}_{end_month}-{end_year}_{len(df)art}.csv",
+                        file_name=f"hal_articles-{start_month}-{start_year}_{end_month}-{end_year}_{len(df)}art.csv",
                         mime="text/csv"
                     )
             except Exception as e:
