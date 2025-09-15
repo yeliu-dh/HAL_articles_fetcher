@@ -6,9 +6,8 @@ Elle permets de chercher flexiblement des articles par année et par mois et gar
 
 Le fichier de résultat est en **CSV** avec les colonnes choisies  
 
-Cliquez ici [APP](https://hal-articles-fetcher.streamlit.app/) pour commencer directement
+**Cliquez ici** [APP](https://hal-articles-fetcher.streamlit.app/) pour commencer directement!🚀
 
----
 
 ## 📂 Structure du projet
 
