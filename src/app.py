@@ -7,28 +7,9 @@ from datetime import datetime
 import re
 from pathlib import Path
 from HAL_search_api import fetch_hal_articles
-# from facets_fetcher import fetch_facets
 
 
-"""
-    2️⃣ 部署到远程 / Streamlit Cloud
-
-    这样别人就 不用本地 Python 环境 也能用：
-
-    注册 Streamlit Cloud
-    （有免费额度）
-
-    将 app.py 和 hal_fetch.py 上传到 GitHub 仓库
-
-    在 Streamlit Cloud 中选择你的仓库部署
-
-    Streamlit 会自动安装依赖，生成网页链接
-
-    用户打开网页即可操作，无需安装 Python 或任何库
-"""
-
-
-#====================缓存=========================#
+#====================CACHE=========================#
 ##HAL
 #code/streamlit.py
 # facets/..
@@ -151,7 +132,7 @@ with left_col:
 # ----------------------- 左侧结果区 -----------------------
 with right_col:
     
-    st.subheader("Commencer la requête")
+    st.subheader("Commencer la recherche")
     st.markdown("<br>", unsafe_allow_html=True)
 
     # 搜索按钮
@@ -200,7 +181,7 @@ with right_col:
                     st.download_button(
                         label="💾 Télécharger",
                         data=csv_data,
-                        file_name=f"hal_articles-{start_month}-{start_year}_{end_month}-{end_year}_{len(csv_data)}.csv",
+                        file_name=f"hal_articles-{start_month}-{start_year}_{end_month}-{end_year}_{len(df)art}.csv",
                         mime="text/csv"
                     )
             except Exception as e:
