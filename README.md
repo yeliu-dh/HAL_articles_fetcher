@@ -12,19 +12,18 @@ Le fichier de résultat est en **CSV** avec les colonnes choisies
 
 
 ## 📂 Structure du projet
-'''
+```
 HAL-fetcher_api/
 │
 ├── src/
-│ ├── app.py               # Entrée principale Streamlit
-│ ├── HAL_search_api.py    # Fonctions pour interroger l’API HAL
-│ └── facets/              # Informations pour les menus
-│ ├── doctype_map.py
-│ ├── domaine_map.py
-│ └── lang_map.py
-│
+│   ├── app.py
+│   ├── HAL_search_api.py
+│   └── facets/
+│       ├── doctype_map.py
+│       ├── domaine_map.py
+│       └── lang_map.py
 ├── .gitignore
 ├── README.md
-└── requirements.txt # Dépendances Python
+└── requirements.txt
+```
 
-'''
