@@ -82,20 +82,29 @@ with left_col:
     with col1:
         start_year = st.selectbox("Année début", years, index=years.index(2025))
     with col2:
-        start_month = st.selectbox("Mois début", months, index=months.index(current_month-1))
+        start_month = st.selectbox("Mois début", months, index=months.index(current_month))
 
     col3, col4 = st.columns(2)
     with col3:
         end_year = st.selectbox("Année fin", years, index=years.index(current_year))
     with col4:
         end_month = st.selectbox("Mois fin", months, index=months.index(current_month))
+    
+    
+    
 
     # 日期校验
     invalid_date = False
-    if start_year and start_month:
+    if start_year and start_month:#not None
         if (end_year, end_month) < (start_year, start_month):
-            st.error("⚠️ La fin est antérieur au début!")
+            st.error("⚠️ Période invalide : la fin est antérieur au début!")
             invalid_date = True
+
+    if start_year is None:
+        start_month=None
+    if start_year and start_month is None:
+        start_month=1
+    
 
     # 语言、实验室
     languages = st.multiselect(
