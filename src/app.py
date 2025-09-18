@@ -122,13 +122,15 @@ with left_col:
     )
 
     # 输出字段
-    default_fields = ['halId_s', "title_s", "subTitle_s", "authFullName_s","labStructName_s","domain_s", 
-                      "publicationDate_s","journalTitle_s","conferenceTitle_s", "language_s", "keyword_s",
-                      "abstract_s","urlFulltextEsr_s","files_s"]
-
+    options_fields = ['halId_s','uri_s',"docType_s", "title_s", "subTitle_s", "authFullName_s","labStructName_s","domain_s", 
+                      "publicationDate_s","journalTitle_s","conferenceTitle_s","conferenceStartDate_s","country_s","city_s","audience_s",
+                      "language_s", "keyword_s", "abstract_s","urlFulltextEsr_s","files_s",'page_s']
+    
+    default_fields=['halId_s','uri_s', "docType_s", "title_s", "subTitle_s", "authFullName_s","labStructName_s","domain_s", 
+                      "publicationDate_s","journalTitle_s","conferenceTitle_s","country_s", "language_s", "keyword_s", "abstract_s","files_s"]
     fields = st.multiselect(
         "🧾 Info à exporter",
-        options=default_fields,
+        options=options_fields,
         default=default_fields
     )
 
