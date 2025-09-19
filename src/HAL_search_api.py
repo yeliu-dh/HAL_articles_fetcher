@@ -83,24 +83,6 @@ def fetch_hal_articles(start_year=None, start_month=None, end_year=None, end_mon
     else:
         fq.append(f'publicationDate_s:[* TO {end_date}]')  # * 表示不限下限
 
-    ##XXXX    
-    # if text:
-    # # 原始关键词部分
-    #     q = " AND ".join(text)  # 所有关键词必须出现
-        
-    #     if labs:
-    #         # 如果有 labs，也加入 lab 条件
-    #         lab_query = " OR ".join(labs)  # 直接把 lab 名当作关键词
-    #         q = f"({q}) AND ({lab_query})"
-
-
-    # else:#no keywords, just labs
-    #     if labs:
-    #         q = " OR ".join(labs) # "(" + " OR ".join([f'labStructName_s:"{lab}"' for lab in labs]) + ")"
-    #     else:#no keywords or labs
-    #         q = "*:*"  
-
-
     if text:
         q = " AND ".join(text)  # 所有关键词都必须出现
     else:

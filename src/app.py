@@ -100,9 +100,9 @@ with left_col:
             st.error("⚠️ Période invalide : la fin est antérieur au début!")
             invalid_date = True
 
-    if start_year is None:
+    if start_year is None:#无开始年份，选取过往所有文章
         start_month=None
-    if start_year and start_month is None:
+    if start_year and start_month is None:#没开始月份，默认从1月开始
         start_month=1
     
 
@@ -127,7 +127,11 @@ with left_col:
                       "language_s", "keyword_s", "abstract_s","urlFulltextEsr_s","files_s",'page_s']
     
     default_fields=['halId_s','uri_s', "docType_s", "title_s", "subTitle_s", "authFullName_s","labStructName_s","domain_s", 
-                      "publicationDate_s","journalTitle_s","conferenceTitle_s","country_s", "language_s", "keyword_s", "abstract_s","files_s"]
+                    "publicationDate_s","journalTitle_s","conferenceTitle_s","country_s", "language_s",
+                     "keyword_s", "abstract_s","files_s","urlFulltextEsr_s"]
+    
+    #check champs :https://api.archives-ouvertes.fr/docs/search/?schema=fields#fields
+
     fields = st.multiselect(
         "🧾 Info à exporter",
         options=options_fields,
